@@ -1,5 +1,6 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local ESX = exports["es_extended"]:getSharedObject()
 
-QBCore.Functions.CreateUseableItem("portablechair", function(source)
+
+ESX.RegisterUsableItem('portablechair', function(playerId)
     TriggerClientEvent("portablechair:Toggle", source)
-end)
+  end)
