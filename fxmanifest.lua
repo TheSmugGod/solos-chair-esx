@@ -2,11 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'Solos#7777'
-description 'solos-chair'
+description 'solos-chair , CONVERTED TO ESX BY SMUGGOD'
 version '1.0.0'
-
-
-shared_scripts '@qb-core/shared/locale.lua'
 
 client_script 'client.lua'
 
