@@ -10,9 +10,8 @@ local closestchair = GetClosestObjectOfType(coords.x, coords.y, coords.z, 10.0, 
 local ped = PlayerPedId()
 local chairout = false
 
-local QBCore = exports['qb-core']:GetCoreObject()
+local ESX = exports["es_extended"]:getSharedObject()
 local src = source 
-local Player = QBCore.Functions
 
 -- load anim
 
@@ -70,13 +69,16 @@ local function SitInChair()
 end
 
 -- take out chair event
-RegisterNetEvent('portablechair:Toggle', function()
+exports('portablechairToggle', function(source)
+ --   local ESX = exports["es_extended"]:getSharedObject()
     local ped = PlayerPedId()
     local veh = IsPedInAnyVehicle(ped, true)
+  --  local xPlayer = ESX.GetPlayerFromId(source)
     
     if veh ~= false then
         chairout = true
-        QBCore.Functions.Notify("You can't use this here!", "error")
+        print('You cant use this here!')
+  --      xPlayer.showNotification("You can't use this here!")
     end
     
     if chairout == false then
@@ -95,8 +97,3 @@ RegisterNetEvent('portablechair:Toggle', function()
         chairout = false
     end
 end)
-
-
--- QBCore.Functions.CreateUseableItem("portablechair", function(source)
---     TriggerClientEvent("portablechair:Toggle", source)
--- end)
